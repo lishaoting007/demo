@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13dom操作</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        button {
+            /* width: 100px; */
+            height: 60px;
+            font-size:26px;
+            line-height:60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>我是标题</h1>
+    <div class="container">
+        <h2>我是H2</h2>
+    </div>
+    <button class="btn1">进去</button>
+    <button class="btn2">出去</button>
+    <button class="btn3">我自己进去</button>
+    <button class="btn4">我自己出去</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $(".btn1").click(function() {
+        $(".container").append($("h1"));
+    })
+    $(".btn2").click(function() {
+        $(".container").after($("h1"));
+    })
+    $(".btn3").click(function() {
+        $("h1").appendTo($(".container"))
+    })
+    $(".btn4").click(function() {
+        $("h1").insertAfter($(".container"))
+    })
+</script>
+</html>

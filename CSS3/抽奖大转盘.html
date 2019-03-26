@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div#turntable-wrapper{
+        width:650px;
+        height:600px;
+        background-image:url(images/38/turntable-bg.jpg);
+        position:relative;
+        margin:10px auto;
+    }
+    div#turntable-wrapper .turntable{
+        position:absolute;
+        top:58px;
+        left:116px;
+        transform:rotateZ(0deg);
+        transition:all 4s ease 0s;
+    }
+    div#turntable-wrapper #pointer{
+        position:absolute;
+        top:155px;
+        left:255px;
+        cursor:pointer;
+    }
+</style>
+<body>
+    <div id="turntable-wrapper">
+        <img src="images/38/turntable.png" class="turntable" id="turntable">
+        <img src="images/38/pointer.png" id="pointer">
+    </div>
+</body>
+<script>
+    let btn = document.querySelector("#pointer");
+    let turn = document.querySelector(".turntable");
+    let ratate = 0;
+    btn.onclick = function () {
+        let ramdomnum = Math.floor(Math.random()*7);
+        let turndeg = ramdomnum*51.428;
+        ratate = turndeg + ratate + 720;
+        turn.style.transform = `rotateZ(${ratate}deg)`;
+    }
+    
+    
+</script>
+</html>

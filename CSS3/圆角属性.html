@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0}
+    div{
+		width:200px;
+		height:200px;
+		background:#ccc;
+		border:1px solid black;
+		margin:50px;
+		float:left;
+		line-height:200px;
+		text-align:center;
+	}
+    div:nth-child(1){
+        border-radius:30%;
+    }
+    div:nth-child(2){
+        border-radius:20px 0 0 0;
+    }
+    div:nth-child(3){
+        border-radius:10px 20px 40px 80px;
+    }
+    div:nth-child(4){
+        border-radius:20px 0 20px 0;
+    }
+    div:nth-child(5){
+        border-radius:20px 20px 0 0;
+    }
+    div:nth-child(6){
+        border-radius:0 0 20px 20px;
+    }
+    div:nth-child(7){
+        border-radius:50%
+    }
+    div:nth-child(8){
+        border-top-right-radius:20px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius:40px;
+        border-bottom-right-radius: 50px;
+    }
+</style>
+<body>
+    <div>普通圆角</div>
+    <div>淘宝圆角</div>
+    <div>递增圆角</div>
+    <div>对角线圆角</div>
+    <div>上圆角</div>
+    <div>下圆角</div>
+    <div>正圆</div>
+    <div>单个角设置</div>
+</body>
+
+</html>

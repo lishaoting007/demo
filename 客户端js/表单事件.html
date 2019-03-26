@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://www.baidu.com">
+        用户名: <input type="text">
+        <br>
+        密码: <input type="password">
+        <br>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+    </form>
+</body>
+<script>
+    var form = document.querySelector("form");
+    var input = document.querySelectorAll("input")
+    var btn = document.querySelectorAll("button");
+
+    form.onreset = function () {
+        console.log("表单被重置了");
+        
+    }
+    form.onsubmit = function () {
+        console.log("提交成功");
+        
+    }
+</script>
+</html>

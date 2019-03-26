@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05组件注册</title>
+    <style>
+        .btn {
+            /* width: 100px; */
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #fff;
+            border-radius: 20%;
+            -webkit-appearance: none;
+            color: #409eff;
+            font-size: 26px;
+        }
+        .btn:active {
+            color: #fff;
+            background: #409eff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <dy-btn>第一个按钮</dy-btn>
+        <dy-btn>第二个按钮</dy-btn> -->
+        <hs-btn>第一个按钮</hs-btn>
+        <hs-btn>第二个按钮</hs-btn>
+      
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var obj = {//定义组件
+        template:`<button class="btn" @click="handclick">
+            <slot></slot>
+        </button>`,
+        data(){
+            return {
+                msg:"我是按钮"
+            }
+        },
+        methods:{
+            handclick(){
+                console.log("做某件事");
+                
+            }
+        },
+        created(){
+            console.log("按钮初始化完成");
+            
+        }
+        }
+
+    Vue.component("hs-btn",obj)
+
+    var vm = new Vue ({
+        // components:{//注册组件
+        //     "dy-btn":obj
+        // },
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+
+        },
+        created () {
+
+        }
+    })
+</script>
+</html>

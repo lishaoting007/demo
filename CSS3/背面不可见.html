@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ddd;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+    div img{
+        transform: rotateY(0deg);
+        transition:all 1s ease 0s;
+        backface-visibility: hidden;
+    }
+    div:hover img{
+        transform:rotateY(180deg)
+    }
+</style>
+<body>
+    <div><img src="images/41.jpg"></div>
+</body>
+</html>

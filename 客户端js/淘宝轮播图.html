@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 520px;
+            height: 280px;
+            margin:100px auto;
+            overflow: hidden;
+            position: relative;
+        }   
+
+
+        ul {
+            list-style: none;
+            width: 3000px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+
+        li {
+            float: left;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .list-item {
+            position: absolute;
+            left:50%;
+            bottom:15px;
+            transform: translate(-50%, 0);
+            background-color: rgba(255, 255, 255, 0.3);
+            font-size: 0;
+            height: 14px;
+            border-radius: 10px;
+            text-align: center;
+
+        }
+
+        .list-item span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 3px;
+        }
+
+        .list-item span.active {
+            background: #ff6700;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="clearfix" id="ul">
+            <li><img src="1.webp" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.webp" alt=""></li>
+            <li><img src="5.jpg" alt=""></li>
+        </ul>
+        <div class="list-item clearfix">
+            <span class="item active"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+            <span class="item"></span>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function go(dom, target) {
+        var speed = target - dom.offsetLeft > 0 ? 2 : -2
+        var timer = setInterval(() => {
+            if (dom.offsetLeft == target) {
+                clearInterval(timer)
+            } else {
+                dom.style.left = dom.offsetLeft + speed +"px";
+            }
+        }, 1/60);
+    }
+
+    var btns = document.querySelectorAll(".item");
+    var lis = document.querySelector("#ul");
+
+    btns.forEach ((item, index) => {
+        item.onclick = function () {
+            btns.forEach (it => {
+                it.classList.remove("active");
+            });
+            this.classList.add("active");
+            go(ul,-520*index);
+        }
+    })
+</script>
+
+</html>

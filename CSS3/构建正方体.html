@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 400px;
+        height: 400px;
+        margin: 100px auto;
+        perspective:1500px;
+    }
+    ul{
+        width: 400px;
+        height: 400px;
+        position: relative; 
+        transform-style: preserve-3d;
+        transition: transform 3s ease 0s;
+        list-style:none;
+
+    }
+    .cube li{
+		width: 400px;
+		height: 400px;
+		position: absolute;
+		left: 0;
+		top:0;
+	}
+    li:nth-of-type(1){
+        
+        background-image: url(images/46/1.jpg);
+        transform:translateZ(200px);
+    }
+    li:nth-of-type(2){
+        
+        background:url("images/46/2.jpg");
+        transform:rotateX(90deg) translateZ(200px);
+    }
+    li:nth-of-type(3){
+       
+        background:url("images/46/3.jpg");
+        transform:rotateX(180deg) translateZ(200px);
+    }
+    li:nth-of-type(4){
+        
+        background:url("images/46/4.jpg");
+        transform:rotateX(270deg) translateZ(200px);
+
+    }
+    li:nth-of-type(5){
+        
+        background:url("images/46/5.jpg");
+        transform:rotateY(90deg) translateZ(200px);
+    }
+    li:nth-of-type(6){
+        
+        background:url("images/46/6.jpg");
+        transform:rotateY(-90deg) translateZ(200px);
+    }
+    div:hover ul{
+        transform:rotateX(360deg) rotateY(360deg);
+    }
+</style>
+<body>
+    <div class="cube">
+        <!--ul表示立方体,li表示立方体的面-->
+        <ul>
+            <li>前面</li>
+            <li>上面</li>
+            <li>后面</li>
+            <li>下面</li>
+            <li>左面</li>
+            <li>右面</li>
+        </ul>
+    </div>
+</body>
+
+</html>

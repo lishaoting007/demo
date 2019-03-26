@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+     *{margin: 0; padding: 0;}
+        img{margin: 50px;  }
+        img:nth-of-type(1){
+            animation: tiao 1s cubic-bezier(1, 0.01, 1, 1) 0s infinite alternate;
+        }
+        img:nth-of-type(2){
+            animation: zhuan 1s linear 0s infinite;
+        }
+        @keyframes tiao{
+            from{
+                transform: translateY(-200px)
+            } to {
+                transform: translateY(0px)
+            }
+        }
+        @keyframes zhuan {
+            from {
+                transform: rotateZ(0deg)
+            } to {
+                transform: rotateZ(360deg)
+            }
+        }
+</style>
+<body>
+    <img src="images/52/ball.png" alt="">
+    <img src="images/52/fengche.png" alt="">
+</body>
+
+</html>

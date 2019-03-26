@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>09子组件向父组件传值</title>
+    <link rel="stylesheet" href="./element-ui.css" />
+    <style>
+      /* [v-cloak] {
+            display: none;
+        } */
+    </style>
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <dy-checkbox v-model="arr" @give-value="getValue"></dy-checkbox>
+      <!-- <el-checkbox-group :value="arr" @input="demo">
+            <el-checkbox label="复选框 A"></el-checkbox>
+            <el-checkbox label="复选框 B"></el-checkbox>
+            <el-checkbox label="复选框 C"></el-checkbox>
+            <el-checkbox label="禁用" disabled></el-checkbox>
+            <el-checkbox label="选中且禁用" disabled></el-checkbox>
+        </el-checkbox-group> -->
+    </div>
+  </body>
+  <script src="./vue.js"></script>
+
+  <script src="./element-ui.js"></script>
+  <script>
+    var dyCheckBox = {
+      template: `
+        <div>
+            <h1>喜欢什么样的女孩子</h1>
+            <label >
+                安静的
+                <input type="checkbox" value="1"  v-model="currentValue">
+            </label>
+            <label >
+                搞怪的
+                <input type="checkbox" value="2"  v-model="currentValue">
+            </label>
+            <label >
+                性感的
+                <input type="checkbox" value="3"  v-model="currentValue">
+            </label>
+            <label >
+                萌萌哒
+                <input type="checkbox" value="4"  v-model="currentValue">
+            </label>
+            <button @click="toValue">传值</button>
+        </div>
+        `,
+      data() {
+        return {
+          currentValue: []
+        };
+      },
+      // watch: {
+      //     currentValue(value) {
+      //     this.$emit("give-value", value)
+      //     }
+      // },
+      methods: {
+        toValue() {
+          this.$emit("give-value", this.currentValue);
+        }
+      }
+    };
+
+    var vm = new Vue({
+      components: {
+        "dy-checkbox": dyCheckBox
+      },
+      el: "#app",
+      data: {
+        arr: []
+      },
+      methods: {
+        getValue(value) {
+          console.log("子组件传过来的值", value);
+        },
+        demo(value) {
+          this.arr = value;
+        }
+      }
+    });
+  </script>
+</html>

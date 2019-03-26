@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01初识vue</title>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <!-- <h1>{{msg}}</h1> -->
+        <!-- <input type="text" v-model="msg"> -->
+        <h1 v-bind:title="title" v-show="seen">第一个seen</h1>
+        <h1 v-show="!seen">第二个seen</h1>
+        <!-- <h1 v-for="content in arr">
+            {{content.text}}
+        </h1> -->
+        <button v-on:click="toggle">切换显示</button>
+
+        <ul v-for="(item, index) in arr">
+            <li>
+               <h2> {{item.text}}</h2>
+                <div>
+                    {{item.time}}
+                </div>
+                <div>
+                    这是第{{index+1}}条新闻
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue ({
+        el:"#app",
+        data:{
+            msg:"hello world",
+            title:'页面加载于 ' + new Date().toLocaleString(),
+            seen:true,
+            arr:[
+                {
+                    text:"第1个",
+                    time:"2019.03.04"
+                    
+                },
+                {
+                    text:"第2个",
+                    time:"2019.03.04"
+                    
+                },
+                {
+                    text:"第3个",
+                    time:"2019.03.04"
+                    
+                },
+                {
+                    text:"第4个",
+                    time:"2019.03.04"
+                    
+                }
+            ]
+        },
+        methods:{
+            toggle:function () {
+                this.seen = !this.seen;
+                
+            }
+        }
+    })
+    
+</script>
+</html>

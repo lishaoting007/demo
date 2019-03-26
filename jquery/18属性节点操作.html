@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18属性节点操作</title>
+</head>
+
+<body>
+    <div class="container" title="内容" id="div">
+
+    </div>
+    <button>切换</button>
+    <form action="">
+        <input type="text">
+    </form>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $("button").click(function () {
+        var $item = $(".container").toggleClass("active");
+        console.log(($item).attr("class"))
+    })
+    // var $item = $(".container").attr("title","我是盒子").removeAttr("class").addClass("box").addClass("active").removeClass("active");
+    $("input").prop("value","yidaduanwenzi")
+</script>
+
+</html>

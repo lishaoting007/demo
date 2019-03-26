@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02axios请求数据</title>
+</head>
+<body>
+    <div id="app" >
+        <ul>
+            <li v-for="(item, index) in arr">
+                <h1>
+                    {{item.title}}
+                </h1>
+                <div>
+                    {{item.contentText}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="./axios.js"></script>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue ({
+        el:"#app",
+        data:{
+            arr:[]
+        },
+        methods:{
+            getData () {
+                axios.get("http://didi.yaojunrong.com/api/article/get").then(res => {
+                    console.log(res);
+                    this.arr = res.data.data;
+                })
+            }
+        },
+        created(){
+            console.log("我执行了，我是自动执行的");
+            this.getData();
+        }
+    })
+</script>
+</html>

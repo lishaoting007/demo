@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>25jquery写选项卡</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            
+        }
+        .container {
+            width: 450px;
+            height: 500px;
+            border: 2px solid #4093ff;
+            margin: 100px auto;
+            border-radius: 20px;
+        }
+        li {
+            float:left;
+        }
+        .tag-ietm>li {
+            width: 150px;
+            height: 60px;
+            border-bottom: 2px solid rgb(252, 240, 240);
+            line-height: 60px;
+            font-size: 26px;
+            text-align:center;
+            border-radius: 15px ;
+        }
+        .contain-item {
+            position: relative;
+        }
+        .contain-item>li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display:none;
+            width: 450px;
+            height: 438px;
+        }
+        .clearfix::after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+        .tag-ietm>li.active {
+            background: #409eff;
+            color:#fff;
+            border-bottom: 1px solid #409eff;
+        }
+        .contain-item>li.active{
+            display: block;
+            background: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container ">
+        <ul class="tag-ietm clearfix">
+            <li class="">首页</li>
+            <li>详情</li>
+            <li>关于</li>
+        </ul>
+        <ul class="contain-item">
+            <li class="">首页面</li>
+            <li>详情页面</li>
+            <li>关于页面</li>
+        </ul>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $(".tag-ietm").find("li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        var $index = $(this).index();
+        console.log($index);
+        
+        $(".contain-item>li").eq($index).addClass("active").siblings().removeClass("active");
+        
+    })
+</script>
+</html>

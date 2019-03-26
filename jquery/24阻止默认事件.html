@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>24阻止默认事件</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            
+        }
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background:#ff0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://www.baidu.com">
+        <input type="text" name="username" value="admin">
+        <button>提交</button>
+    </form>
+    <div class="box">
+
+        <div class="container">
+
+        </div>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $("form").submit(function (e) {
+        e = e || window.event;
+        e.preventDefault();
+    })
+    $(".box").click(function () {
+        console.log("我是父亲");
+        
+    })
+    $(".container").click(function (e) {
+        console.log("我是孩子");
+        e.stopPropagation();
+    })
+</script>
+
+</html>

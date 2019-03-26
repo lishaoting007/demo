@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15删除元素</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            
+        }
+        h1 {
+            background: #409eff;
+        }
+        .container {
+            background: #ef6700;
+            width: 100px;
+            height: 100px;
+        }
+        button {
+            width: 100px;
+            height: 60px;
+            font-size: 26px
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>我是标题</h1>
+        <div class="container">
+            内容
+        </div>
+    </div>
+    <button>删除</button>
+    <button>掏空</button>
+    <button>解开</button>
+    <button>添加</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    var title = null;
+    $("h1").click(function () {
+        $(this).css({fontSize:100})
+    })
+    $("button:eq(0)").click(function () {
+        title.remove()
+    })
+    $("button").eq(1).click(function() {
+        $(".container").empty()
+    })
+    $("button").eq(2).click(function(){
+       title = $("h1").detach();
+    })
+
+    $("button").eq(3).click(function(){
+        title.prependTo($(".box"))
+    })
+</script>
+</html>

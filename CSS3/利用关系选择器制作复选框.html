@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        color:#4093ff;
+    }
+    input{
+        display: none;  
+    }
+    .box{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #4093ff;
+        position: relative;
+        background-color: #fff;
+    }
+    input[type="checkbox"]:checked ~ .box::after{
+        content: "";
+        
+        position: absolute;
+        top:0px;
+        left:0px;
+        width: 8px;
+        height: 4px;
+        
+        border:1px solid transparent;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotateZ(-45deg);
+    }
+    input[type="checkbox"]:checked ~.box{
+        background-color: #409eff;
+    }
+</style>
+<body>
+    <label class="container">
+        <input type="checkbox">
+        <span class="box"></span>
+        <span class="text">喜欢看电影</span>
+    </label>
+    
+</body>
+</html>

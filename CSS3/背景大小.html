@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width:300px;
+        height:300px;
+        border:1px solid black;
+        margin:50px;
+        float:left;
+        background-image:url(images/25.jpg);
+        font-size:30px;
+        color:green;
+        background-repeat: no-repeat;
+    }
+    div:nth-child(2){
+        background-size: 100px 100px;
+    }
+    div:nth-child(3){
+        background-size: 100% 100%;
+    }
+    div:nth-child(4){
+        background-size: 100% auto;
+    }
+    div:nth-child(5){
+        background-size: auto 100%;
+    }
+    div:nth-child(6){
+        background-size: cover;
+    }
+    div:nth-child(7){
+        background-size: contain;
+    }
+    </style>
+</head>
+<body>
+    <div>我是默认的</div>
+    <div>background-size:100px 100px; 设定背景图大小</div>
+    <div>background-size:100% 100%; 宽度与高度与盒子等宽高</div>
+    <div>background-size:100% auto;</div>
+    <div>background-size:auto 100%;</div>
+    <div>background-size:cover;</div>
+    <div>background-size:contain;</div>
+</body>
+</html>

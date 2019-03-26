@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>23事件委托</title>
+</head>
+
+<body>
+    <button class="btn">添加</button>
+    <ul class="ul">
+
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    var index = 0;
+    $(".btn").click(function () {
+        index++;
+        $(` <li>第${index}个孩子 <button>删除</button></li>`).appendTo(".ul")
+    })
+    // $(".ul").on("click", "button", function () {
+    //     $(this).parent().remove();
+    // })
+    document.querySelector(".ul").onclick = function (e) {
+        var e = e || window.event;
+        console.log(e);
+
+        if (e.target.nodeName == "BUTTON") {
+            e.target.parentElement.remove();
+        }
+    }
+</script>
+
+</html>

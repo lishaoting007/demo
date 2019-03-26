@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: pink;
+        }
+        .wallet{
+            width: 300px;
+            height: 300px;
+            border: 1px solid pink;
+            border-radius: 50%;
+            position: relative;
+            margin: 100px auto;
+        }
+        .wallet .frontface{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top:0;
+            left: 0;
+            background: url(images/wallet.png) left bottom;
+            backface-visibility: hidden;
+            transform: rotateY(0deg);
+            transition: transform 1s ease 0s;
+        }
+        .wallet .backface{
+            width: 300px;
+            height: 300px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:url(images/wallet.png) -305px bottom;
+            transform: rotateY(180deg);
+            transition: transform 1s ease 0s;
+            backface-visibility: hidden;
+        }
+        .wallet:hover .frontface{
+            transform: rotateY(180deg);
+        }
+        .wallet:hover .backface{
+            transform: rotateY(360deg)
+        }
+    </style>
+</head>
+<body>
+    <div class="wallet">
+        <div class="backface"></div>
+        <div class="frontface"></div>
+    </div>
+</body>
+</html>

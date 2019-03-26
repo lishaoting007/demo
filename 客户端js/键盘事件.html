@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: fixed;
+            left: 500px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #000000;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    var box = document.querySelector(".box");
+
+    document.onkeydown = function (e) {
+        // console.log(e.keyCode);
+        if (e.keyCode == 38) {
+            box.style.height = box.offsetHeight - 10 + "px";
+        } else if (e.keyCode == 37) {
+            box.style.width = box.offsetWidth - 10 + "px";
+        } else if (e.keyCode == 40) {
+            box.style.height = box.offsetHeight + 10 + "px";
+        } else if (e.keyCode == 39) {
+            box.style.width = box.offsetWidth + 10 + "px";
+        }
+
+    }
+</script>
+
+</html>

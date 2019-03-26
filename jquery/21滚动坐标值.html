@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>21滚动坐标值</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 500px;
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid #000;
+        }
+        ul {
+            list-style:none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>第1个孩子</li>
+            <li>第2个孩子</li>
+            <li>第3个孩子</li>
+            <li>第4个孩子</li>
+            <li>第5个孩子</li>
+            <li>第6个孩子</li>
+            <li>第7个孩子</li>
+            <li>第8个孩子</li>
+            <li>第9个孩子</li>
+            <li>第10个孩子</li>
+            <li>第11个孩子</li>
+            <li>第12个孩子</li>
+            <li>第13个孩子</li>
+            <li>第14个孩子</li>
+            <li>第15个孩子</li>
+            <li>第16个孩子</li>
+            <li>第17个孩子</li>
+            <li>第18个孩子</li>
+            <li>第19个孩子</li>
+            <li>第20个孩子</li>
+            <li>第21个孩子</li>
+            <li>第22个孩子</li>
+            <li>第23个孩子</li>
+            <li>第24个孩子</li>
+            <li>第25个孩子</li>
+            <li>第26个孩子</li>
+            <li>第27个孩子</li>
+            <li>第28个孩子</li>
+            <li>第29个孩子</li>
+            <li>第30个孩子</li>
+            <li>第31个孩子</li>
+            <li>第32个孩子</li>
+            <li>第33个孩子</li>
+            <li>第34个孩子</li>
+            <li>第35个孩子</li>
+            <li>第36个孩子</li>
+            <li>第37个孩子</li>
+            <li>第38个孩子</li>
+            <li>第39个孩子</li>
+            <li>第40个孩子</li>
+            <li>第41个孩子</li>
+            <li>第42个孩子</li>
+            <li>第43个孩子</li>
+            <li>第44个孩子</li>
+            <li>第45个孩子</li>
+            <li>第46个孩子</li>
+            <li>第47个孩子</li>
+            <li>第48个孩子</li>
+            <li>第49个孩子</li>
+            <li>第50个孩子</li>
+        </ul>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    
+    $(".box").scroll(function() {
+        console.log(this.scrollTop);
+        
+    })
+    
+</script>
+</html>

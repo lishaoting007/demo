@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08父向子传值</title>
+    <link rel="stylesheet" href="./element-ui.css">
+    <style>
+        .active {
+            background: #f00;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        .width {
+            width:200px;
+        }
+        .btn {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            /* border: 1px solid #888; */
+            background: #4093ff;
+            border-radius: 10px;
+            color:#fff;
+            -webkit-appearance: none;
+        }
+        .primary {
+            background: #f583af;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <el-button @click="addClass">默认按钮</el-button> 
+        <el-button type="primary" @click="addWidth=!addWidth">好看的按钮</el-button> 
+        <el-button type="primary" size="small">小按钮</el-button> 
+
+        <div class="box " v-bind:class="{active:isActive,width:addWidth}">
+
+        </div> -->
+        <!-- <dy-button>默认按钮</dy-button> -->
+        <dy-button j1111="primary">蓝色的按钮</dy-button>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script src="./element-ui.js"></script>
+<script>
+    var dyButton = {
+        props: {
+            j1111: String
+        },
+        template:`
+        <button class="btn"  :class="{primary:this.j1111=='primary'}" >
+        <slot></slot>
+        {{j1111}}
+        </button>`,
+        created(){
+            console.log(this.j1111);
+            
+        },
+       
+    }
+
+    var vm = new Vue ({
+        components:{
+            "dy-button":dyButton
+        },
+        el:"#app",
+        data:{
+            isActive:false,
+            addWidth:false
+        },
+        methods:{
+            addClass() {
+                this.isActive = !this.isActive
+            }
+            
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* .box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ef6700;
+    }
+    article::after{
+        content: "我是后面的一个小尾巴";
+        width: 100px;
+        height: 100px;
+        display: block;
+        border: 1px solid #7b68ee;
+    }
+    article::before{
+        content:"我是前面的一个触角";
+        width: 100px;
+        height: 100px;
+        border: 1px solid #409eff;
+        display: block;
+    } */
+    :root {
+        background-color: #ddd;
+    }
+
+    /* .box{
+        width: 400px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 150px auto;
+        text-align: center;
+        font-size:26px;
+        background-color: #425a6c;
+        line-height: 200px;
+    }
+    .box>span:hover::after{
+        content:"]";
+
+    }
+    .box>span:hover::before{
+        content:"[";
+    } */
+    /* .top{
+        width: 600px;
+       
+    }
+    .top>.left{
+        width: 300px;
+        height: 300px;
+        background-image: url("./images/12/01.jpg");
+        float:left;
+    }
+    .top>.right{
+        width: 300px;
+        height: 300px;
+        background-image: url("./images/12/02.jpg");
+        float: left;
+    }
+    .bottom{
+        width: 700px;
+        height: 400px;
+        background-color: #409eff;
+    }
+    .clear::after{
+        content:"";
+        display:block;
+        clear:both;
+        height: 0;
+        visibility:hidden;
+        
+    } */
+    article {
+        width: 150px;
+        margin: 50px auto;
+
+    }
+
+    section {
+        width: 800px;
+
+        margin: 50px auto;
+    }
+
+    div {
+        width: 150px;
+        margin: 50px auto;
+    }
+    article>p::first-letter{
+        color:#409eff;
+    }
+    section>p::first-line{
+        color:#409eff;
+    }
+    ::selection{
+        color:#ef6700;
+        background-color: #0ff;
+    }
+</style>
+
+<body>
+    <!-- <article> -->
+        <!-- <div class="box">我是一个盒子</div> -->
+        <!-- <div class="box">
+        <span>GRF</span>
+        <span>KT</span>
+    </div> -->
+        <!-- <div class="top clear">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="bottom"></div> -->
+        <article>
+            <p>日暮苍山兰舟小，</p>
+            <p>本无落霞缀清泉。</p>
+            <p>去年叶落缘分定，</p>
+            <p>死水微漾人却亡。</p>
+        </article>
+
+        <section>
+            <p>明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间？</p>
+            <p>转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。</p>
+        </section>
+
+        <div>
+            <p>四张机</p>
+            <p>鸳鸯织就欲双飞</p>
+            <p>可怜未老头先白</p>
+            <p>春波碧草</p>
+            <p>晓寒深处</p>
+            <p>相对浴红衣</p>
+        </div>
+    <!-- </article> -->
+</body>
+
+</html>

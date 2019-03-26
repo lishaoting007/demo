@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /* *{
+        padding: 0;
+        margin: 0;
+    } */
+    figure{
+        width:300px;
+		height:215px;
+		position:relative;
+		overflow:hidden;
+		float:left;
+    }
+    figure:first-child figcaption{
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        color:#fff;
+        text-align: center;
+        background-color: rgba(0,0,0,0.3);
+        position:absolute;
+        left:0px;
+        bottom:0px;
+
+	}
+    figure:nth-child(2) p{
+        margin: 0;
+        
+        width:100%;
+		height:35px;
+		background-color:black;
+		position:absolute;
+		left:0px;
+		bottom:0px;
+		opacity:0.3;
+		/* filter:alpha(opacity=30); */
+    }
+    figure:nth-child(2) figcaption{
+		width:100%;
+		height:40px;
+		line-height:40px;
+		padding-left:10px;
+		position:absolute;
+		left:0;
+		bottom:0;
+		color:white;
+		font-family:"微软雅黑";
+	}
+    figure:nth-child(3) figcaption{
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        color:#fff;
+        text-align: center;
+        background:url(images/16/bg1.png) repeat;
+        position:absolute;
+        left:0px;
+        bottom:0px;
+    }
+</style>
+<body>
+    <figure>
+        <img src="./images/16/baoya.jpg">
+        <figcaption>龅牙哥与茫然弟与无辜女</figcaption>
+    </figure>
+
+    <figure>
+        <img src="./images/16/baoya.jpg">
+        <p></p>
+        <figcaption>龅牙哥与茫然弟与无辜女</figcaption>
+    </figure>
+
+    <figure>
+        <img src="./images/16/baoya.jpg">
+        <p></p>
+        <figcaption>龅牙哥与茫然弟与无辜女</figcaption>
+    </figure>
+</body>
+
+</html>

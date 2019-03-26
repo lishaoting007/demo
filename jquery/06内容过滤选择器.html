@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06内容过滤选择器</title>
+</head>
+<style>
+    span {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000; 
+        display: block;
+    }
+    div {
+        width: 100px;height: 100px;
+        border: 1px solid #000;
+        display: none;
+    }
+</style>
+<body>
+    <div></div>
+    <h1>qq</h1>
+    <ul>
+        <li>我是内容1</li>
+        <li>我是内容2</li>
+        <li class="item">我是内容3</li>
+        <li>我是内容4</li>
+        <li>我是内容5
+            <span></span>
+            <span>
+
+            </span>
+        </li>
+        <li class="">我是内容6</li>
+        <li class="i">我是内容7</li>
+        <li class="im">我是内容8</li>
+        <li>我是内容9</li>
+        <li>我是内容10</li>
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // $(":root").css({background:"#eee"})
+
+    // $("li").has("span").css({color:"red"})
+    // $(":empty()").css({background:"#f00"})
+    // $(":parent").css({color:"skyblue"})
+    // $(':visible').css({color:"red"})    
+    // $("div:hidden").css({display:"block"})
+    // $('li[class^="i"]').css({color: "red"})
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08过滤筛选选择器</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+</style>
+<body>
+    <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li class="">第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+        <li>第9个</li>
+        <li>第10个</li>
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // $('li').filter((index, item) => {
+    //     if(index%2 == 0 ){
+    //         return true
+    //     }
+    // }).css({color:"red"})
+    // $('li').slice(0,-2).css({color:"red"})
+    // console.log($("li").eq(-1).is("[class]"));
+    $("li:eq(4)").css({color:"red"}).hasClass('class');
+    
+    
+</script>
+</html>

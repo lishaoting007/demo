@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06局部注册与全局注册</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            /* border: 1px solid #000; */
+            background: #444;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid #000; */
+            background-color: #6a5acd;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        
+        <parent-box>
+                
+                <child-box></child-box>
+        </parent-box>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var child = {
+        template:`
+            <div class="box1">我是孩子</div>
+        `
+    }
+    Vue.component("child-box",child)
+    var parent = {
+        template:`<div class="box2">
+                <child-btn></child-btn>
+                <slot></slot>
+        </div>`,
+        // components:{
+        //     "child-btn":child
+        // }
+        
+    }
+    var vm = new Vue ({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            "parent-box":parent
+        }
+    })
+</script>
+</html>

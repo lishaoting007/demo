@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+
+    div{
+        width: 100px;
+        height: 30px;
+        border: 1px solid #555;
+        margin: 100px auto;
+        border-radius:10px;
+        position:relative;
+    }
+    div::after{
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #0ff;
+        border-right: 1px solid #0ff;
+        transform: rotateZ(45deg);
+        position:absolute;
+        top:8.5px;
+        right:5px;
+    }
+</style>
+<body>
+    <div></div>
+</body>
+</html>

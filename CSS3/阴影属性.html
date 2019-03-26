@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        margin: 50px;
+        float: left;
+        line-height: 50px;
+        text-align: center;
+    }
+    div:nth-child(1){
+        box-shadow:10px 0;
+        text-shadow:10px 10px 10px  #ff0
+    }
+    div:nth-child(2){
+        box-shadow: 0 10px;
+    }
+    div:nth-child(3){
+        box-shadow:10px -10px;
+    }
+    div:nth-child(4){
+        box-shadow:10px 10px 20px;
+    }
+    div:nth-child(5){
+        box-shadow: 10px 10px 20px 10px;
+    }
+    div:nth-child(6){
+        box-shadow: 10px 10px 20px 10px gray;
+    }
+    div:nth-child(7){
+        box-shadow: 0 0 20px 10px #00ffff;
+    }
+    div:nth-child(8){
+        box-shadow:0 0 20px 10px #7b68ee inset;
+    }
+    div:nth-child(9){
+        box-shadow:0 0 20px 10px #ff0 inset,0 0 20px 10px #18e7dd, 10px 10px 20px 10px pink;
+    }
+</style>
+
+<body>
+    <div>水平方向阴影</div>
+    <div>垂直方向阴影</div>
+    <div>右上都有阴影</div>
+    <div>右下有阴影，加模糊程度</div>
+    <div>右下有阴影，加模糊程度，比原盒子上下左右各大10px</div>
+    <div>右下有阴影，加模糊程度，比原盒子上下左右各大10px，阴影为灰色</div>
+    <div>发红光</div>
+    <div>内发光</div>
+    <div>多个阴影</div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>session</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <button id="btn1">登录</button>
+  <button id="btn2">查看是否登录</button>
+  <h1 id="title"></h1>
+</body>
+<script src="/js/axios.js"></script>
+<script>
+  let btn1 = document.querySelector("#btn1");
+  let btn2 = document.querySelector("#btn2");
+  let title = document.querySelector("#title");
+
+  btn1.onclick = function () {
+      axios.post("/login").then(res => {
+        console.log(res)
+      })
+    }
+
+    btn2.onclick = function () {
+      axios.get("/isLogin").then(res => {
+        let loginStatus = res.data.data;
+        title.innerText = loginStatus;
+      })
+
+    }
+</script>
+
+</html>

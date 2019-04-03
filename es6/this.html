@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /*
+    this的特性：
+    1，在事件处理函数中，this指向事件源；
+    2，this永远指向函数的调用者；
+    3，在严格模式下，匿名函数中的this指向undefined。("use strict";)
+    4，在箭头函数中，this指向被定义时所在的作用域，而不是指向被调用者 
+    **/
+
+    // 测试：
+    // var str = {
+    //     name:"周九良",
+    //     logname(){
+    //         console.log(this.name);
+            
+    //     }
+    // }
+
+    // function logname(){
+        
+    //     console.log(this);
+        
+    // }
+    // logname();//返回window，this指向函数的调用者，logname的调用者为window
+
+
+    // "use strict";
+    // var fun1 = function(){
+    //     console.log(this);
+        
+    // }
+    // fun1();//返回undefined
+
+    // (function(){
+    //     console.log(this);
+        
+    // })()//创建一个匿名对象并让它直接执行
+</script>
+</html>

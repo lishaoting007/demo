@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <li>列表4</li>
+        <li>列表5</li>
+    </ul>
+</body>
+<script>
+    //Array.from将两类对象转换成数组，一类是类似数组的对象，一类是可遍历的对象
+    // var lis = document.querySelectorAll("li");
+    // var ul = document.querySelector("ul");
+    // var arr = Array.from(lis);
+
+    // arr = arr.sort((prev, curr, index) => {
+    //     let prevText = prev.innerText;
+    //     let currText = curr.innerText;
+    //     return currText[currText.length -1] - prevText[prevText.length -1]
+    // })
+    // arr.map((item) => {
+    //     return ul.appendChild(item)
+    // })
+    // console.log(arr);
+    
+
+    //将接受的li类数组转换成真生的数组，
+    //进行数组的sort方法
+    //将重新排序的数组写入ul中
+
+    let lis = document.querySelectorAll("li");
+    let ul = document.querySelector("ul");
+    let arr = Array.from(lis);
+    arr = arr.sort((prev,curr,index) => {
+        let prevText = prev.innerText;
+        let currText = curr.innerText;
+        return currText[currText.length - 1] - prevText[prevText.length -1];
+    })
+    arr.map((item) => {
+        return ul.appendChild(item);
+    })
+
+    console.log(arr);
+    
+</script>
+</html>

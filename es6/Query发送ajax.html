@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    $.ajax({
+        url:"https://m.yaojunrong.com/book",
+        success(res){
+            let book = res.data[154];
+            let bookId = book._id;
+
+            console.log(book);
+            
+            $.ajax({
+                url:`https://m.yaojunrong.com/titles/${bookId}`,
+                
+                
+                success(res){
+                    let title = res.data[14];
+                    let titleId = title._id;
+                    console.log(res);
+                    $.ajax({
+                        url:`https://m.yaojunrong.com/article/${titleId}`,
+                        success(res){
+                            console.log(res.data.article.content);
+                            
+                        }
+                    })
+                }
+            })
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --port 3000 --hot --contentBase src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}

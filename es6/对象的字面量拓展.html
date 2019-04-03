@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button class= "btn">按钮</button>
+</body>
+<script>
+    // let name = "王力宏";
+    
+    // let obj = {
+    //     name,
+    //     logName() {
+    //         console.log(this.name);
+            
+    //     }
+        
+    // }
+    // console.log(obj.logName());
+
+    // 计算属性
+
+
+    
+    
+
+    let btn = document.querySelector(".btn");
+    // let id = 1;
+    // let person = {
+    //     [`name${id}`] : id++,
+    //     [`name${id}`] : id++,
+    //     [`name${id}`] : id++,
+    //     [`name${id}`] : id++,
+    //     [`name${id}`] : id++,
+    //     [`name${id}`] : id++
+    // }
+    // console.log(person);
+    
+    // btn.onclick = function () {
+    //    person[`name${id}`] = id;
+    //    id++;
+    //    console.log(person);
+     
+    // }
+    
+    let arr1 = ["name","age"];
+    let arr2 = ["王力宏","18"];
+    let obj = {
+        [arr1.shift()] : arr2.shift(),
+        [arr1.shift()] : arr2.shift(),
+
+    }
+    console.log(obj);
+  
+</script>
+</html>

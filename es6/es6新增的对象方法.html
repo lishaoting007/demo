@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // let obj1 = {
+    //     name:"tom",
+    //     age:"13"
+    // };
+    // let obj2 = {
+    //     name:"Jerry",
+    //     age:"12"
+    // };
+    // let obj3 = {
+    //     shengao:"120"
+    // };
+    // let obj = Object.assign(obj1,obj2,obj3);
+    // console.log(obj);
+
+    // for(let key in obj2){
+    //     obj3[key] = obj2[key];
+    // }
+    // console.log(obj3);
+    // let obj4 = Object.assign(obj1,{ fun1(){
+
+    // },fun2(){
+
+    // }}) 
+    // let obj5 = Object.assign (obj2,{fun3(){
+
+    // }})
+    // console.log(obj4);
+    // console.log(obj5);
+
+    let {keys,values,entries} = Object;
+    let obj1 = {a:"1", b:"2", c:"3"}
+    for(let key of keys(obj1)){
+        console.log(key); 
+    }
+    for(let value of values(obj1)){
+        console.log(value);
+    }
+    for(let [value,key] of entries(obj1)){
+        console.log([value,key]);
+    }
+    
+   
+   
+    
+</script>
+</html>

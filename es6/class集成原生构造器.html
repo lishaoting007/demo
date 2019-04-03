@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    class Movies extends Array{
+            constructor(...arg){
+                super(...arg)
+                this.name = "今日电影排行榜"
+                let date = new Date()
+                this.desc = `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`
+                 
+            }
+            getTop(){
+                return this.sort((prev,curr) => curr.numbers - prev.numbers)
+            }
+            getTop3(){
+                return this.getTop().slice(0,3);
+            }
+        }
+
+    const movie = new Movies({
+        name: "复联者联盟3",
+        numbers: 1111
+    },
+    {
+        name: "摔跤吧！爸爸",
+        numbers: 998
+    },
+    {
+        name: "捉妖记2",
+        numbers: 1000
+    },
+    {
+        name: "大开眼戒",
+        numbers: 777
+    },
+    {
+        name: "东方列车谋杀案",
+        numbers: 2222
+    });
+
+
+   console.log(movie.getTop3());
+   
+    
+    
+    
+</script>
+</html>

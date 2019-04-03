@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var fun1 = () => {};
+    // var fun2 = (sum1,sum2) =>sum1 + sum2;
+    // var fun3 = () => ({name:"王力宏", age:"35"});//由于大括号被解释为代码块,所以使用箭头函数返回一个对象要加(),否则会报错。
+
+    // var fun4 = () => {a:1};
+    // console.log(fun4());//undefined,这是一种特殊情况，可以执行，但会输出错误结果。代码原本意图输出一个对象，但是由于引擎默认｛｝是代码块，因此输出代码 a:1，
+    //                     // 此时a被解释为语句的标签,实际执行的是语句1，然后函数就结束了，没有返回值
+    
+    // let fun5 = ({first,last}) => first + "" +last;//箭头函数可以和变量解构一起使用
+
+    //箭头函数的注意点：
+    // 1，箭头函数中的this指向定义时的对象(父级上下文)，不是指向新建的对象
+    // 2，箭头函数不能被当作构造函数使用，也就是不能使用new命令。因为new做的第二件事是将this指向新创建的对象
+    // 3，箭头函数不能使用arguments对象，如果要用可以使用rest(...参数名)参数替代
+    
+    
+    // function fun6 () {
+    //     setTimeout(() => {
+    //         console.log("id:",this.id);   
+    //     }, 1000);
+    // }
+    // var id = 21;
+    // console.log(fun6.call({id:42}));
+    
+    function Timer ()  {
+        this.num1 = 0;
+        this.num2 = 0;
+        setInterval(() => {
+            this.num1++
+        }, 1000);
+        setInterval(function () {
+            this.num2++
+        },1000)
+    }
+    var timer = new Timer;
+    setTimeout(() => {console.log("num1:",timer.num1);},2000)
+    setTimeout(() => {console.log("num2:",timer.num2);},2000)
+
+    
+
+    
+</script>
+</html>

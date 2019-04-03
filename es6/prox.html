@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="input">
+        <h1 id="title"></h1>
+
+    </div>
+</body>
+<script>
+    let input = document.querySelector("#input");
+    let title = document.querySelector("#title");
+
+    var obj = {
+        text:"小虎"
+    }
+    var proxy = new Proxy(obj,{
+        get(target, property, receiver){
+            return target[property];
+
+        },
+        set(target, property, value, receiver){
+            target[property] = value;
+            input.value = value;
+            title.innerText = value;
+            
+        }
+    })
+    input.oninput = function(){
+        proxy.text = this.value;
+    }
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function covert(rest,...arg) {
+    //     return arg.map(arg => arg/rest)
+    // }
+    
+    
+
+    // function fun1 (rest,...arg) {
+    //     return arg.map((arg) => {
+    //         return arg/rest
+    //     })
+    // }
+    // const arg = fun1(7, 70, 700, 7000);
+    // console.log(arg);
+
+    //es5求和
+    // function sum () {
+    //     let result = 0;
+    //     for (let i =0; i<arguments.length; i++){
+    //         result += arguments[i]
+    //     };
+    //     return result;
+    // }
+    // console.log(sum(1,2,3,4,));
+    // function sum () {
+    //     let result = 0;
+    //     for (let i = 0; i<arguments.length; i++){
+    //         result += arguments[i];
+    //     }
+    //     return result;
+    // }
+    // console.log(sum(1,2,2,3,4,5,6));
+
+    let sum = (...arg) => {
+        let result = 0;
+        for(let i =0; i<arg.length; i++){
+            result += arg[i]
+        }
+        return result;
+    }
+    console.log(sum(1,2,3,4));
+    
+    
+</script>
+</html>

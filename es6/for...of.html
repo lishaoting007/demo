@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+   <ul>
+       <li>列表1</li>
+       <li>列表2</li>
+       <li>列表3</li>
+       <li>列表4</li>
+       <li>列表5</li>
+   </ul>
+</body>
+<script>
+   var lis = document.getElementsByTagName("li");
+   console.log(lis);
+   
+    //通过getElementsByTagName生成的类数组不能使用foreach循环，但是能使用for...of循环；通过querySelevtorAll生成的可以使用foreach
+    // lis.forEach(value => {
+    //     console.log(value);
+        
+    // })
+    //    for(value of lis){
+    //        console.log(value);
+           
+    //    }
+
+    
+</script>
+
+</html>

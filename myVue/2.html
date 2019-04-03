@@ -12,13 +12,46 @@
 
 <body>
     <div id="app">
-
+        <com1 @func='show'></com1>
     </div>
+
+
+    <template id="title" >
+        <div>
+            <h1>1111</h1>
+            <input type="button" value="按钮" @click="myclick">
+        </div>
+    </template>
     <script>
+        var com1 = {
+            template: '#title',
+            methods: {
+                myclick() {
+                    this.$emit("func", this.msg)
+                }
+            },
+            data(){
+                return {
+                    msg:"今天去骑马"
+                }
+            }
+        }
+
         var vm = new Vue({
             el: '#app',
-            data: {},
-            methods: {}
+            data: {
+                msg: null
+            },
+            methods: {
+                show(data) {
+                    console.log("今天是个学习的好日子！");
+                    this.msg = data
+                    console.log(this.msg,"---父组件中的msg");
+                }
+            },
+            components: {
+                com1
+            }
         });
     </script>
 </body>

@@ -1,0 +1,15 @@
+{
+  "name": "liuyanban",
+  "version": "1.0.0",
+  "description": "package.json文件的作用：\r     1，记录我们项目所需要的依赖\r     2，别人拿到你的项目后，会根据package.json，去安装所有的依赖，只需要通过 npm install",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1"
+  }
+}

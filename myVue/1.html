@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-  <script src="./vue.js"></script>
-</head>
-
-<body>
-  <div id="app">
-    b4tab
-  </div>
-  <script>
-    var vm = new Vue({
-      el: "#app",
-      data: {},
-      methods: {},
-      filters: {},
-      components: {},
-      directives: {},
-
-      beforeCreate() {},
-      created() {},
-      beforeCount() {},
-      counted() {},
-      beforeupdate() {},
-      updated() {},
-      beforeDestroy() {},
-      destroyed() {},
-
-    });
-  </script>
-</body>
-
+  <body>
+    <div id="app" >
+      <com1 :options='msg'></com1>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "123"
+        },
+        methods: {},
+        components: {
+          com1: {
+            template: `<h1>子组件----{{ options }}</h1>`,
+            props: {
+              options: Object
+            }
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
